@@ -1,0 +1,11 @@
+{login_wrapper}<a href="{$login_url}">Login</a>{/}
+{logout_wrapper}
+<div class="dropdown">
+  <div data-toggle="dropdown" class="dropdown-toggle">Welcome 
+    <label class="login-menu-padding">{$username}</label><span class="caret"></span>
+  </div>
+  <ul class="dropdown-menu login-menu fa-user-icon">
+    <li style="border-bottom: 1px solid whitesmoke" class="top-header-login"><a href="?page=myaccount" style="text-decoration:none;" title="View Your Account"> <i aria-hidden="true" class="fa fa-user pull-right"> </i>MyAccount</a></li>
+    <li class="top-header-login fa-login-icon"><a href="{$logout_url}" title="You can logout"> <i aria-hidden="true" class="fa fa-sign-out pull-right"> </i>Logout</a></li>
+  </ul>
+</div>{/}

@@ -1,0 +1,22 @@
+{login_wrapper}
+//- i.fa.fa-sign-in(aria-hidden='true')
+a(href="{$login_url}") Login
+{/}
+
+{logout_wrapper}
+.dropdown
+	.dropdown-toggle(data-toggle='dropdown')
+		| Welcome 
+		label.login-menu-padding {$username}
+		span.caret
+	ul.dropdown-menu.login-menu.fa-user-icon
+		li(style="border-bottom: 1px solid whitesmoke").top-header-login
+			a(href="?page=myaccount" style="text-decoration:none;" title="View Your Account")  
+				i.fa.fa-user.pull-right(aria-hidden='true') 
+				| MyAccount
+		li.top-header-login.fa-login-icon
+			a(href="{$logout_url}" title="You can logout")  
+				i.fa.fa-sign-out.pull-right(aria-hidden='true') 
+				| Logout
+		
+{/}
