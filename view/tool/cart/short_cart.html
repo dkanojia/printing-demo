@@ -2,41 +2,48 @@
 <div id="{$_name}" class="xepan-commerce-tool-cart {$class}">
   {$Content}
   {cart_container}
-  <ul style="list-style: outside none;">
-    <li style="padding:0px;margin:0px;" class="dropdown reset-margin text-center"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" style="padding:0px;margin:0px;" class="dropdown-toggle reset-margin"><span class="xepan-commerce-cart-item-count"> {total_count}0{/}</span> - Items<span class="caret"></span></a>{lister_wrapper}
-      <ul role="menu" style="width:400px; background:white" class="dropdown-menu dropdown-menu-right dropdown-menu-right dropdown-cart xepan-cart"> 
+  <ul class="manualropdown">
+    <li style="padding:0px;margin:0px;" class="dropdown reset-margin text-center"><a id="{$_name}dropdown" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" style="padding:0px;margin:0px;" class="dropdown-toggle reset-margin"><span class="xepan-commerce-cart-item-count"> {total_count}0{/}</span> - Items<span class="caret"></span></a>{lister_wrapper}
+      <ul role="menu" style="width:400px; background:white;text-align:left; line-height: 20px;" aria-labelledby="{$_name}dropdown" class="dropdown-menu dropdown-cart xepan-cart pull-right">
         <div margin="10px 20px" class="scroll-item">{lister}
-          <div style="margin:0; margin-bottom: 10px;" class="row">
-            <div class="col-lg-2"> </div>
-            <div class="col-lg-4">Item</div>
-            <div class="col-lg-3">Amount</div>
-            <div class="col-lg-2">Qty</div>
-            <div class="col-lg-1"></div>
+          <div style="margin:10px;" class="row">
+            <div class="col-lg-3 col-md-3"></div>
+            <div class="col-md-4 col-lg-4">Item</div>
+            <div class="col-md-2 col-lg-2">Amount</div>
+            <div class="col-md-2 col-lg-2">Qty</div>
+            <div class="col-lg-1 col-lg-1"></div>
           </div>{rows}{row}
-          <div id="item-{$id}" style="margin:0;margin-bottom:5px;" class="row item xepan-commerce-tool-cart-item-row">{image_wrapper}
-            <div class="col-lg-2"><img alt="{image}{/}" src="{$image_url}" onerror="this.src='vendor/xepan/commerce/templates/view/tool/cart/images/not-found.png'" width="100%;"/></div>{/}
-            <div style="margin:0px;padding:0px;" class="col-lg-4 short-cart-item-name">
-              {$name} ({$item_code})
-              {custom_fields_wrapper}<small>{custom_field}</small>
-              <div> <small>
-                   
-                  {$id}: {$name}</small></div>{/}{/}
+          <div id="item-{$id}" style="margin:0;margin-bottom:5px;" class="row xepan-commerce-tool-cart-item-row">
+            <div class="col-md-3 col-lg-3">{canvas_wrapper}
+              <div data-width="{$width}" data-height="{$height}" data-trim="{$trim}" data-unit="{$unit}" data-design="{$design}" data-selected_layouts_for_print="{$selected_layouts_for_print}" data-item_id="{$item_id}" data-item_member_design_id="{$item_member_design_id}" data-item_name="{$item_name}" data-base_url="{$base_url}" data-calendar_starting_month="{$calendar_starting_month}" data-calendar_starting_year="{$calendar_starting_year}" data-calendar_event="{$calendar_event}" class="image-block">
+                <div id="canvas-cart-{$uniq_id}" style="width:100px;" class="customer-designer-image"></div>
+              </div>{/canvas_wrapper}
+              {image_wrapper}<img alt="{image}{/}" src="{$image_url}" onerror="this.src='vendor/xepan/commerce/templates/view/tool/cart/images/not-found.png'" width="100%;"/>{/image_wrapper}
             </div>
-            <div class="col-lg-3">{$sales_amount} </div>
-            <div class="col-lg-2">{qty_wrapper}{qty_form}{qty}0{/}{/}{/}</div>
-            <div class="col-lg-1">
+            <div style="margin:0px;padding:0px;" class="col-md-4 col-lg-4 short-cart-item-name">
+              {$name} ({$item_code})
+              {custom_fields_wrapper}<small>
+                 
+                {custom_field}
+                <div> <small>
+                     
+                    {$id}: {$name}</small></div>{/}</small>{/}
+            </div>
+            <div class="col-lg-2 col-md-2">{$sales_amount} </div>
+            <div class="col-lg-2 col-md-2">{qty_wrapper}{qty_form}{qty}0{/}{/}{/}</div>
+            <div class="col-lg-1 col-lg-1">
               <button data-cartid="{$id}" class="btn btn-xs btn-info pull-right xepan-commerce-cart-item-delete">x</button>
             </div>
           </div>{/}{/}
           {/lister}
         </div>{not_found}
-        <li class="xepan-cart-empty">{$not_found_message}</li>{/}
+        <li class="xepan-cart-empty text-center">{$not_found_message}</li>{/}
         {footer}
-        <li class="divider"></li>
-        <li style="font-size:1.2em; padding-left:5px; padding-right:10px;">{sum_amount_excluding_tax_wrapper}
+        <li style="width: 100%;" class="divider"></li>
+        <li style="width: 100%;  font-size:1.2m; padding-left:5px; padding-right:10px;">{sum_amount_excluding_tax_wrapper}
           <div class="row">
             <div class="col-lg-6">Sum Amount</div>
-            <div class="col-lg-6 text-right">{sum_amount_excluding_tax}0.00{/}</div>
+            <div class="col-lg-6 text-right"> {total_amount}0.00{/}</div>
           </div>{/}
           {discount_voucher_wrapper}
           <div class="row">
@@ -45,36 +52,39 @@
           </div>
           <div class="row">
             <div class="col-lg-6">Discount Amount</div>
-            <div class="col-lg-6 text-right"> {$discount_amount}</div>
+            <div class="col-lg-6 text-right"> {discount_amount}0.00{/}</div>
           </div>{/}
           {sum_shipping_charge_wrapper}
           <div class="row">
             <div class="col-lg-6">Shipping Charge</div>
-            <div class="col-lg-6 text-right">{sum_shipping_charge}0.00{/}</div>
+            <div class="col-lg-6 text-right">{total_shipping_amount}0.00{/}</div>
           </div>{/}
           {tax_amount_wrapper}
           <div class="row">
             <div class="col-lg-6">Tax Amount</div>
-            <div class="col-lg-6 text-right">₹ {tax_amount}tax_amount{/}</div>
+            <div class="col-lg-6 text-right">{tax_amount}0.00{/}</div>
           </div>{/}
           {total_amount_wrapper}
           <div class="row">
             <div class="col-lg-6">Total Amount:</div>
-            <div class="col-lg-6 text-right">₹ {net_amount}{/}</div>
+            <div class="col-lg-6 text-right">{net_amount}0.00{/}</div>
           </div>{/}
         </li>
-        <li class="divider"></li>
-        <li>
+        <li style="width: 100%;" class="divider"></li>
+        <li style="width: 100%;">
           <div class="row">
-            <div class="col-lg-6">{cart_detail_btn_wrapper}
-              <div class="btn btn-success btn-block"><a href="{$cart_detail_url}" class="text-center">View Cart</a></div>{/}
-            </div>
-            <div class="col-lg-6">{proceed_to_next_button_wrapper}
+            <div class="col-md-6">{cart_detail_btn_wrapper}<a href="{$cart_detail_url}" class="text-center btn btn-success btn-block">View Cart</a>{/}</div>
+            <div class="col-md-6">{proceed_to_next_button_wrapper}
               <div class="btn btn-block btn-primary xepan-cart-proceed-to-next-btn">Checkout</div>{/}
             </div>
           </div>
         </li>{/footer}
       </ul>{/lister_wrapper}
     </li>
-  </ul>{/}
+  </ul>
+  <script>
+    $('.manualdropdown').click(function(){
+      $(this).children('li.dropdown').toggleClass('open');
+    });
+  </script>{/}
 </div>

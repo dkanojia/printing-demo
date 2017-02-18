@@ -119,4 +119,9 @@ form input[type="number"],
 form input[type="password"]{
 	width: 100% !important;
 }
-
+form input[type="text"], 
+form input[type="email"], 
+form input[type="number"], 
+form input[type="password"], textarea{
+  padding: 0px 15px !important;
+}
