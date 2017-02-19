@@ -60,7 +60,7 @@
           {discount_voucher_wrapper}
           .row
             .col-lg-6 Apply Coupon
-            .col-lg-6.text-right  {$discount_voucher}
+            .col-lg-6.text-right.discount-amount  {$discount_voucher}
           .row
             .col-lg-6 Discount Amount
             .col-lg-6.text-right  {discount_amount}0.00{/}
@@ -85,7 +85,7 @@
           .row
             .col-md-6
               {cart_detail_btn_wrapper}
-              a.text-center.btn.btn-success.btn-block(href="{$cart_detail_url}") View Cart
+              a.text-center.btn.btn-success.btn-block.view-cart-button(href="{$cart_detail_url}") View Cart
               {/}
             .col-md-6
               {proceed_to_next_button_wrapper}
