@@ -134,7 +134,8 @@ form input[type="password"]{
 
 .xepan-commerce-itemdetail-name h2,
 .xshop-designer-item-name,
-.xepan-item-description h2{
+.xepan-item-description h2,
+.widget-title{
   color: #2a3f52 !important;
   font-family: "Open Sans",Arial,sans-serif !important;
   font-weight: 700 !important;
@@ -180,7 +181,8 @@ form input[type="password"]{
 
 .xepan-item-description p,
 .xshop-item-addtocart,
-.xepan-specification{
+.xepan-specification,
+.contact-form .atk-form-row label{
   color: #777777;
   font: 13px/21px "Open Sans",Arial,sans-serif;
 }
@@ -188,3 +190,23 @@ form input[type="password"]{
 .xshop-designer-image-lister .main-box-header .row{
   margin: 0;
 } 
+
+.contact-form .atk-form-row{
+  padding: 5px 0px;
+}
+.contact-form textarea{
+  width: 100%;
+}
+
+.contact-form button{
+    border-width: 2px;
+    font-size: 14px;
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+    background-color: #2a80b9;
+    padding: .6em 1em;
+    border: 1px solid;
+    width: 100%;
+}
