@@ -179,6 +179,19 @@ form input[type="password"]{
     border: 1px solid;
 }
 
+.commerce-personalize-button-wrapper button{
+    margin: 2% !important;
+    border-width: 2px;
+    font-size: 14px;
+    color: #2a80b9;
+    margin: 0;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+    background-color: transparent;
+    padding: .5em 1em;
+    border: 1px solid;
+}
+
 .xepan-item-description p,
 .xshop-item-addtocart,
 .xepan-specification,
