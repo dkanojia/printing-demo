@@ -272,3 +272,10 @@ form input[type="password"]{
 #front_myaccount_xepan_commerce_tool_myaccount .xshop-designer-itemimageslister{
   margin-top: 8% !important;
 } 
+
+.new-product-image > img{
+      height: 260px !important ;
+}
+.all-product-image > img{
+      height: 230px !important ;
+}
