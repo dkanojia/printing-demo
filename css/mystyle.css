@@ -272,10 +272,47 @@ form input[type="password"]{
 #front_myaccount_xepan_commerce_tool_myaccount .xshop-designer-itemimageslister{
   margin-top: 8% !important;
 } 
+.xepan-commerce-image-wrapper{
+  height: 260px !important;
+  max-height: 260px !important; 
+  background-color: #f4f1ec;
+}
+.xepan-commerce-image-wrapper{
+  text-align: center;
+}
 
-.new-product-image > img{
-      height: 260px !important ;
+.xepan-commerce-image-wrapper .xepan-commerce-item-img{
+    max-height: 250px !important ;
+    height: auto !important;
+    max-width: 100% !important;
+    width: auto !important;
+}
+.product-content h5{
+  height: 40px !important;
+  text-align: center;
+}
+/*.new-product-image > img{
 }
 .all-product-image > img{
-      height: 230px !important ;
+      max-height: 250px !important ;
+}
+.featured-product-image > img{
+      max-height: 250px !important ;
+}*/
+
+.xshop-item-image-list{
+  width: 100%;
+  z-index: 10px;
+}
+.xshop-item-image-block{
+  width:20%;
+  padding: 3px;
+  outline: 1px solid gray !important;
+  float: left;
+  margin-left:6px; 
+  margin-bottom:6px;
+}
+
+.xshop-item-image-block img{
+  width:100% !important;
 }

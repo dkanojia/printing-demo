@@ -7,18 +7,18 @@ div(id='{$_name}' class="{$class} row" style="{$style}")
       p {$item_count}
   {/}
   {rows}{row}
-  .col-lg-4.col-md-4.col-sm-6
+  .col-md-3.col-sm-6
     {$micro_data}
     .product-item.xepan-commerce-item(data-xsnb-item-id='{$id}', onclick='javascript:void(0);')
       {image_wrapper}
       .product-thumb.xepan-commerce-image-wrapper
-        a.xepan-commerce-image-anchor.all-product-image(href='{$item_detail_page_url_via_image}')
+        a.xepan-commerce-image-anchor.featured-product-image(href='{$item_detail_page_url_via_image}')
           img.xepan-commerce-item-img(src='{first_image}abc{/}')
       {/image_wrapper}
       //- product-thum
-      .product-content.helement-height
+      .product-content
         {name_wrapper}
-        h5.text-center
+        h5
           a(href='{item_detail_page_url_via_name}{/}') {$name}
         {/}
         {sale_price_wrapper}
