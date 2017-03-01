@@ -316,3 +316,8 @@ form input[type="password"]{
 .xshop-item-image-block img{
   width:100% !important;
 }
+
+#front_products_xepan_commerce_tool_filter .panel-info > .panel-heading{
+  background-color: #2a80b9;
+  color: white;  
+}
