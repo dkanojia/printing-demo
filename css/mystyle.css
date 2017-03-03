@@ -163,6 +163,20 @@ form input[type="password"]{
     border: 1px solid !important;
 }
 
+.credit-management .onlinepay-button button{
+    border-width: 2px !important;
+    font-size: 15px !important;
+    color: #2a80b9 !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+    /*text-transform: uppercase;*/
+    background-color: transparent !important;
+    padding: .5em 1em !important;
+    border: 1px solid !important;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .xepan-designer-images-addimagebutton-spot button,
 .xepan-addtocartbutton-multi-step-wizard button,
 .xepan-checkout-same-as-billing-address .btn,
